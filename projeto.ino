@@ -1,8 +1,8 @@
 
 // C++ code
 //temperatura ideal é até 28C
-//caso temperatura suba entre 28C e 30C, alerta é gerado
-//caso suba acima de 30C, alerta é gerado e "alarme" toca
+//caso temperatura suba entre 28C e 30C, alerta é gerado e ventilador acionado para que temperatura reduza
+//caso suba acima de 30C, alerta crítico é gerado, alerta sonoro é gerado, e acesso a area é bloqueado.
 #include <Servo.h>
 #include <DHT.h>
 #define buzz01 7 
@@ -71,7 +71,6 @@ void abrir_cancela(int alerta){
   }
   else
   	Serial.println("Entrada proibida devido a alerta!");
-      
   		
 }
 void fechar_cancela(){
@@ -90,18 +89,21 @@ void loop()
   
   if (temp_atual <28)
   {
+    //acesso normal. 
     digitalWrite(buzz01, LOW);
     alerta = 0;
     semaforo(alerta);
   }
   if (temp_atual >=28 && temp_atual <=30){
-  	Serial.println("Temperatura acima do esperado");
+  	//acesso normal, porem alerta é gerado, e ventilador ligado
+    Serial.println("Temperatura acima do esperado");
     Serial.println("Ligar ventilador!");
     digitalWrite(buzz01, LOW);
     alerta = 1;
     semaforo(alerta);
   }
   if (temp_atual >30){
+    //acesso proibido, alerta critico
     Serial.println("Alerta Critico!!!");
   	digitalWrite(buzz01, HIGH);
     alerta = 2;
@@ -116,4 +118,3 @@ void loop()
     fechar_cancela();
   
 }
-
