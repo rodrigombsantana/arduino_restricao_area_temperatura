@@ -9,3 +9,6 @@ Simulação de restrição de acesso a uma area especifica mediante a sua temper
 
 Design do Tinkercad
 ![image](https://github.com/rodrigombsantana/arduino_restricao_area_temperatura/assets/13989641/e36cb1eb-4f09-4cec-b0e4-1572c4867923)
+
+
+Obs: no Tinkercad foi usado um sensor de temperatura analogico na porta A5 porém o codigo e a maquete foram implementadas com sensor digital DHT11 na porta 4.
