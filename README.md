@@ -12,3 +12,7 @@ Design do Tinkercad
 
 
 Obs: no Tinkercad foi usado um sensor de temperatura analogico na porta A5 porém o codigo e a maquete foram implementadas com sensor digital DHT11 na porta 4.
+
+
+link da simulação : (https://youtu.be/NZ2SDnSBBrc)
+
